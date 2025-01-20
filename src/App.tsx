@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import NavBar from './components/NavBar';
+import Home from './pages/Home';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App: React.FC = () => {
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      {/* Main container */}
+      <div className='w-[90%] min-h-screen flex flex-col items-center mx-auto p-2 pt-8 select-none'>
+        {/* Barra superior */}
+        <div className='w-full h-[40px] bg-black absolute top-0' />
 
-export default App
+        {/* Navbar */}
+        <NavBar />
+
+        {/* Main Content */}
+        <div className='flex-grow w-full p-8 pt-8'>
+          <Home />
+        </div>
+
+        {/* Footer */}
+        <footer className='w-full text-center text-white p-4'>
+          By{' '}
+          <a 
+            href="https://github.com/AlecsDeveloper" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className='text-blue-400 hover:text-blue-500 transition duration-300'
+          >
+            @AlecsDeveloper
+          </a>
+        </footer>
+
+      </div>
+    </>
+  );
+};
+
+export default App;
