@@ -22,12 +22,12 @@ const App: React.FC = () => {
         <footer className='w-full text-center text-white p-4'>
           By{' '}
           <a 
-            href="https://github.com/AlecsDeveloper" 
+            href="https://github.com/TheSilver1023" 
             target="_blank" 
             rel="noopener noreferrer" 
             className='text-blue-400 hover:text-blue-500 transition duration-300'
           >
-            @AlecsDeveloper
+            @TheSilver
           </a>
         </footer>
 
