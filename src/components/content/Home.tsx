@@ -1,4 +1,5 @@
-import Separator from "../components/Separator"
+import Separator from "../ui/Separator"
+
 
 export default function Home() {
   return (
