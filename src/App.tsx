@@ -1,10 +1,13 @@
 import React from 'react';
-import Home from './components/content/Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/pages/Home';
+import Docs from './components/pages/Docs';
 import NavBar from './components/elements/NavBar';
+import Marketplace from './components/pages/Marketplace';
 
 const App: React.FC = () => {
   return (
-    <>
+    <Router>
       {/* Main container */}
       <div className='w-[90%] min-h-screen flex flex-col items-center mx-auto p-2 pt-8 select-none'>
         {/* Barra superior */}
@@ -19,7 +22,11 @@ const App: React.FC = () => {
 
         {/* Main Content */}
         <div className='flex-grow w-full p-8 pt-8'>
-          <Home />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/docs" element={<Docs />} />
+            <Route path="/marketplace" element={<Marketplace />} />
+          </Routes>
         </div>
 
         {/* Footer */}
@@ -36,7 +43,7 @@ const App: React.FC = () => {
         </footer>
 
       </div>
-    </>
+    </Router>
   );
 };
 

@@ -59,13 +59,13 @@ const CursorShadow: React.FC<CursorShadowProps> = ({
           border-radius: 50%;
           pointer-events: none;
           transform: translate(-50%, -50%);
-          z-index: -1; /* La sombra estará por debajo del contenido */
+          z-index: -1;
           filter: blur(${blur}px);
           transition: opacity ${transitionDuration} ease;
           opacity: 0; 
         }
 
-        @media (min-width: 768px) {
+        @media (pointer: fine) {
           .cursor-shadow:hover::after { opacity: 1; }
         }
       `}</style>

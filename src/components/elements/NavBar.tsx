@@ -18,7 +18,7 @@ export default function NavBar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  
+
   return (
     <div className="w-full h-[70px] sticky top-8 z-50">
       <CursorShadow size={80} color="rgba(127, 216, 140, 0.3)" blur={20} transitionDuration="0.3s" backgroundColor="#18181b60" >
@@ -32,7 +32,7 @@ export default function NavBar() {
 
           {/* Full Screen */}
           <nav className="hidden md:flex mr-10"> 
-            <NavElements className="flex space-x-6"/> 
+            <NavElements className="flex space-x-6"/>
           </nav>
 
           {/* Burger button */}

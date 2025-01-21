@@ -9,5 +9,5 @@ createRoot(document.getElementById('root')!).render(
     <div className='bg-black h-screen w-screen overflow-auto'>
       <App/>
     </div>
-  </StrictMode>,
+  </StrictMode>
 )
