@@ -11,7 +11,7 @@ body { color: white; }
 
 /* Full Screen */
 h1 { font-size: xx-large; }
-h2 { font-size: larger; color: #52525b; }
+h2 { font-size: larger; color: #7e7e82; }
 
 /* Mobile Users */
 @media (max-width: 768px) {

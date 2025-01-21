@@ -22,6 +22,7 @@ const App: React.FC = () => {
 
         {/* Main Content */}
         <div className='flex-grow w-full p-8 pt-8'>
+          <br />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/docs" element={<Docs />} />
