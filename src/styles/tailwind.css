@@ -18,3 +18,15 @@ h2 { font-size: larger; color: #7e7e82; }
     h1 { font-size: x-large; }
     h2 { font-size: medium; }
 }
+
+/* Animations */
+@keyframes slideUp {
+    0% {
+      transform: translateY(14%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}

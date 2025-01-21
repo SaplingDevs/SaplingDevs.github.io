@@ -51,7 +51,7 @@ export default function NavBar() {
       {menuOpen && (
         <div
           ref={menuRef}
-          className="absolute top-[70px] w-full left-0 bg-zinc-900 text-white rounded-3xl z-50 mt-4 transition-all"
+          className="absolute top-[70px] w-full left-0 bg-[#18181b80] backdrop-blur-sm text-white rounded-3xl z-50 mt-4 transition-all"
         >
           <NavElements className="flex flex-col space-y-8 p-6" onItemClick={() => setMenuOpen(false)} />
         </div>

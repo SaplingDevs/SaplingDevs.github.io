@@ -11,7 +11,7 @@ export default function NavElements({ className, onItemClick }: NavElementsProps
   };
 
   return (
-    <ul className={`${className}`}>
+    <ul id="nav-elements" className={`${className}`}>
       {/* Home */}
       <li 
         className="text-white hover:text-blue-500 cursor-pointer transition duration-300"
