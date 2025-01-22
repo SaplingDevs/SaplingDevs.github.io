@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid"; // Necesitarás instalar `uuid`
 
 interface CursorShadowProps {
   children: React.ReactNode;
@@ -12,29 +13,31 @@ interface CursorShadowProps {
 const CursorShadow: React.FC<CursorShadowProps> = ({
   children,
   size = 80,
-  color = 'rgba(100, 100, 100, 0.3)',
+  color = "rgba(100, 100, 100, 0.3)",
   blur = 20,
-  transitionDuration = '0.2s',
-  backgroundColor = 'transparent',
+  transitionDuration = "0.2s",
+  backgroundColor = "transparent",
 }) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const uniqueId = uuidv4(); // Genera un ID único para esta instancia del componente.
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top; 
+    const y = e.clientY - rect.top;
     setCursorPosition({ x, y });
   };
 
   return (
     <div
+      id={`cursor-shadow-${uniqueId}`}
       className="cursor-shadow relative overflow-hidden w-full h-full flex justify-center items-center rounded-3xl"
       onMouseMove={handleMouseMove}
       style={{
-        '--cursor-x': `${cursorPosition.x}px`,
-        '--cursor-y': `${cursorPosition.y}px`,
+        "--cursor-x": `${cursorPosition.x}px`,
+        "--cursor-y": `${cursorPosition.y}px`,
         backgroundColor,
-        position: 'relative',
+        position: "relative",
         zIndex: 0,
       } as React.CSSProperties}
     >
@@ -48,7 +51,7 @@ const CursorShadow: React.FC<CursorShadowProps> = ({
 
       {/* CSS Styles */}
       <style>{`
-        .cursor-shadow::after {
+        #cursor-shadow-${uniqueId}::after {
           content: '';
           position: absolute;
           left: var(--cursor-x);
@@ -62,11 +65,13 @@ const CursorShadow: React.FC<CursorShadowProps> = ({
           z-index: -1;
           filter: blur(${blur}px);
           transition: opacity ${transitionDuration} ease;
-          opacity: 0; 
+          opacity: 0;
         }
 
         @media (pointer: fine) {
-          .cursor-shadow:hover::after { opacity: 1; }
+          #cursor-shadow-${uniqueId}:hover::after {
+            opacity: 1;
+          }
         }
       `}</style>
     </div>

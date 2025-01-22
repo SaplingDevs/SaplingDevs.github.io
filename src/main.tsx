@@ -6,7 +6,7 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <div className='bg-black h-screen w-screen overflow-auto'>
+    <div className='bg-zinc-950 h-screen w-screen overflow-auto'>
       <App/>
     </div>
   </StrictMode>

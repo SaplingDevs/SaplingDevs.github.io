@@ -61,7 +61,7 @@ h2 { font-size: larger; color: #7e7e82; }
     width: 100%;
     opacity: 1;
     right: 0;
-    background-color: black;
+    background-color: transparent;
   }
 }
 
@@ -88,7 +88,7 @@ h2 { font-size: larger; color: #7e7e82; }
 .sapling-text h1:after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -12px;
   left: 0;
   width: 0;
   height: 3px;
