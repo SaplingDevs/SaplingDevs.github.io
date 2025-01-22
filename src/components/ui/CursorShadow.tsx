@@ -46,7 +46,7 @@ const CursorShadow: React.FC<CursorShadowProps> = ({
         {children}
       </section>
 
-      {/* Estilos CSS */}
+      {/* CSS Styles */}
       <style>{`
         .cursor-shadow::after {
           content: '';
