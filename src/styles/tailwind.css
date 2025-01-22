@@ -82,7 +82,7 @@ h2 { font-size: larger; color: #7e7e82; }
   font-weight: bold;
   color: #fff;
   display: inline-block;
-  animation: colorChange 500ms 1.8s forwards, fixScale 500ms 2.1s forwards;
+  animation: colorChange 500ms .8s forwards, fixScale 500ms 1.1s forwards;
 }
 
 .sapling-text h1:after {
@@ -92,5 +92,5 @@ h2 { font-size: larger; color: #7e7e82; }
   left: 0;
   width: 0;
   height: 3px;
-  animation: slideBar 1.9s forwards;
+  animation: slideBar .9s forwards;
 }

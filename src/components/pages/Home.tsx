@@ -1,4 +1,5 @@
 import CursorShadow from "../ui/CursorShadow";
+import Separator from "../ui/Separator";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
             <section className="w-full h-full p-6 bg-black/50 rounded-3xl flex flex-col justify-center">
               <ul className="list-disc list-inside space-y-4 text-white">
                 <li className="text-base font-bold transition-colors duration-300 hover:text-indigo-400">
-                  🎛️ +50 Toggleable Features
+                  🌱 +50 Toggleable Features
                   <ul className="list-circle list-inside ml-6 space-y-2 text-sm text-gray-300">
                     <li className="hover:text-indigo-300">Quality of live</li>
                     <li className="hover:text-indigo-300">Parity</li>
@@ -32,7 +33,7 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="text-base font-bold transition-colors duration-300 hover:text-indigo-400">
-                  🖱️ +10 New Commands
+                  🍃 +10 New Commands
                   <ul className="list-circle list-inside ml-6 space-y-2 text-sm text-gray-300">
                     <li className="hover:text-indigo-300">Customization</li>
                     <li className="hover:text-indigo-300">Fakeplayer</li>
@@ -40,13 +41,20 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="text-base font-bold transition-colors duration-300 hover:text-indigo-400">
-                  🛠️ + Extensions Support
+                  🪴 + Extensions Support
                 </li>
               </ul>
+              <span className="absolute text-zinc-600 right-0 bottom-0 m-2 mr-4 text-sm">Pic by @tomy_ct</span>
             </section>
           </CursorShadow>
         </div>
       </header>
+
+
+      <Separator/>
+
+
+
     </div>
   );
 }
