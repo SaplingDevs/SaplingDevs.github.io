@@ -33,16 +33,24 @@ h2 { font-size: larger; color: #7e7e82; }
 }
 
 /* Animations */
-@keyframes slideUp {
-    0% {
-      transform: translateY(14%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
+@layer components {
+  .animate-slide-up {
+      --translate-y-start: 14%; /* Valor por defecto */
+      animation: slideUp 500ms ease-in-out;
+  }
+
+  @keyframes slideUp {
+      0% {
+          transform: translateY(var(--translate-y-start));
+          opacity: 0;
+      }
+      100% {
+          transform: translateY(0);
+          opacity: 1;
+      }
+  }
 }
+
 
 @keyframes slideBar {
   0% {

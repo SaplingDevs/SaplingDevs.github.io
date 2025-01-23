@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom";
 import CursorShadow from "../ui/CursorShadow";
-import Separator from "../ui/Separator";
 
 export default function Home() {
   return (
-    <div className="animate-[slideUp_500ms_ease-out]">
+    <div className="animate-slide-up" style={{ "--translate-y-start": "4%" }  as React.CSSProperties }>
       <header className="grid gap-12 md:grid-cols-2 md:grid-rows-1 grid-cols-1 grid-rows-auto">
         {/* Presentation */}
         <div className="row-span-4 md:row-span-4">
@@ -50,10 +50,14 @@ export default function Home() {
         </div>
       </header>
 
-
-      <Separator/>
-
-
+      <section>
+        <Link
+          to={"/docs/quickstart"}
+          className="p-[10px_24px_10px_24px] font-semibold rounded-md bg-zinc-700 hover:bg-emerald-600 active:scale-[0.9] transition-all mt-5 inline-block"
+        >
+          Quick Start
+        </Link>
+      </section>
 
     </div>
   );
