@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import CursorShadow from "../ui/CursorShadow";
+import Separator from "../ui/Separator";
 
 export default function Home() {
   return (
     <div className="animate-slide-up" style={{ "--translate-y-start": "4%" }  as React.CSSProperties }>
-      
-      { /* Main Section */ }
-      <div id="home-main-section">
+
+      {/* Main Section */}
+      <div id="main-section">
         <header className="grid gap-12 md:grid-cols-2 md:grid-rows-1 grid-cols-1 grid-rows-auto">
           {/* Presentation */}
           <div className="row-span-4 md:row-span-4">
@@ -63,7 +64,7 @@ export default function Home() {
         </section>
       </div>
 
-      { /* Other Section */ }
+      <Separator/>
 
     </div>
   );
