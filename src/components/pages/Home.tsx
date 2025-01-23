@@ -44,7 +44,7 @@ export default function Home() {
                   🪴 + Extensions Support
                 </li>
               </ul>
-              <span className="absolute text-zinc-600 right-0 bottom-0 m-2 mr-4 text-sm">Pic by @tomy_ct</span>
+              <span className="absolute text-zinc-600 right-0 bottom-0 md:m-2 m-1 mr-4 md:text-sm text-xs">Pic by @tomy_ct</span>
             </section>
           </CursorShadow>
         </div>
