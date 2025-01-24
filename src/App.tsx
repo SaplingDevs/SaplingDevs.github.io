@@ -9,7 +9,7 @@ import Content from './components/elements/Content';
 const App: React.FC = () => {
   return (
     <Router>
-      <div className='w-[90%] min-h-screen flex flex-col items-center mx-auto p-2 pt-8 select-none'>
+      <div className="w-[90%] min-h-screen flex flex-col items-center mx-auto p-2 pt-8 select-none">
         <Blur />
         <NavBar />
         <Content />

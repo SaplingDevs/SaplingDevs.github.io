@@ -4,7 +4,7 @@ import Separator from "../ui/Separator";
 
 export default function Home() {
   return (
-    <div className="animate-slide-up" style={{ "--translate-y-start": "4%" }  as React.CSSProperties }>
+    <div className="animate-slide-up">
 
       {/* Main Section */}
       <div id="main-section">
@@ -12,12 +12,12 @@ export default function Home() {
           {/* Presentation */}
           <div className="row-span-4 md:row-span-4">
             <section className="sapling-text">
-              <h1 className="text-3xl md:text-4xl font-bold">Sapling Addon</h1>
-              <h2 className="mt-6 text-xl md:text-2xl text-white">Enhance Your Minecraft with New Possibilities</h2>
+              <h1 className="text-4xl font-bold">Sapling Addon</h1>
+              <h2 className="mt-6 text-2xl md:text-2xl text-white">Enhance Your Minecraft with New Possibilities</h2>
             </section>
 
             <section className="mt-6 md:mt-10">
-              <h2 className="text-base md:text-lg">
+              <h2 className="text-lg">
                 Sapling is an open-source suite of utilities and tools for Minecraft Bedrock, focused primarily on TMC. It enhances Quality of Life (QoL), optimizes performance, ensures parity, and offers a variety of engines, server-side and client-side features, and more!
               </h2>
             </section>
@@ -65,7 +65,6 @@ export default function Home() {
       </div>
 
       <Separator/>
-
     </div>
   );
 }
