@@ -17,13 +17,38 @@ code { @apply font-mono bg-zinc-900 p-1 rounded-md; }
 blockquote { @apply py-2 border-l-4 border-zinc-700 pl-6; }
 blockquote ul { @apply list-none pl-0; }
 
-blockquote ul li { @apply relative pl-4;  }
-blockquote ul li::before {
+blockquote ul li, 
+#md-docs ul li, 
+#md-docs ol li { @apply relative pl-4;  }
+
+blockquote ul li::before, 
+#md-docs ul li::before, 
+#md-docs ol li::before {
   content: "";
   @apply bg-zinc-600 w-[6px] h-[6px] rounded-full absolute left-0 top-[11px];
 }
+
+pre { @apply bg-zinc-900 p-2 }
+pre code { @apply bg-transparent font-mono }
+
 
 /* Markdown Docs not Found */
 #md-docs-error {
   @apply relative top-[120%]
 }
+
+/* Markdown Docs container */
+#md-docs .tip,
+#md-docs .note,
+#md-docs .error,
+#md-docs .warn,
+#md-docs .info {
+  @apply border-l-4 p-4 rounded-r-md lg:w-1/2 md:w-3/4 w-full my-4;
+  white-space: pre-wrap;
+}
+
+#md-docs > .tip { @apply border-[#3eaf7c] bg-[#95ffe833] }
+#md-docs > .warn { @apply border-[#e7c000] bg-[#ffe5644d] }
+#md-docs > .error { @apply border-[#e70000] bg-[#ff64644d] }
+#md-docs > .note { @apply border-[#007be7] bg-[#649aff4d] }
+#md-docs > .info { @apply border-[#9600e7] bg-[#c964ff4d] }

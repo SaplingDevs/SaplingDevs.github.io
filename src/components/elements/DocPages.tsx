@@ -1,12 +1,19 @@
 import { Routes, Route, Link, useParams } from "react-router-dom";
-import markdownit from 'markdown-it';
 import { useEffect, useRef, useState } from "react";
 import DocNotFound from "../pages/DocNotFound";
 
-const md = markdownit({
-  breaks: true,
-  xhtmlOut: false,
-});
+
+// Markdown it config
+import markdownit from 'markdown-it';
+import markdownItContainer from 'markdown-it-container'
+
+const md = markdownit({ breaks: true, xhtmlOut: false, html: true })
+  .use(markdownItContainer, "tip")
+  .use(markdownItContainer, "note")
+  .use(markdownItContainer, "error")
+  .use(markdownItContainer, "warn")
+  .use(markdownItContainer, "info");
+
 
 type DocPagesProps = {
   docPages: [name: string, content: string][];
