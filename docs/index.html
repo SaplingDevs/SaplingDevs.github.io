@@ -23,11 +23,15 @@
       if (!window.location.hash) {
         window.location.href = window.location.origin + "#" + window.location.pathname;
       }
+
+      window.addEventListener('popstate', (event) => {
+        if (window.location.hash == "#/docs/") window.location.hash = "#/docs/home";
+      });
     </script>
     
     <title>SaplingDevs</title>
-    <script type="module" crossorigin src="/assets/index-CAe0TD1i.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BqSLu7hM.css">
+    <script type="module" crossorigin src="/assets/index-BnP9QTdG.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BkTyTku-.css">
   </head>
   <body>
     <div id="root"></div>
