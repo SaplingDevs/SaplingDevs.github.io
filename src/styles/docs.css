@@ -1,14 +1,14 @@
 /* Markdown Docs */
 #md-docs > :first-child { @apply -mt-4; }
-#md-docs > h1, h2, h3, h4, h5 { @apply my-4; }
-#md-docs > hr { @apply w-full h-[2px] bg-slate-200 my-6; }
+#md-docs h1, h2, h3, h4, h5 { @apply my-4; }
+#md-docs hr { @apply w-full h-[2px] bg-slate-200 my-6; }
 
-#md-docs > h1 { @apply text-3xl; }
-#md-docs > h2 { @apply text-2xl; }
-#md-docs > h1, #md-docs > h2 { @apply font-bold}
+#md-docs h1 { @apply text-3xl; }
+#md-docs h2 { @apply text-2xl; }
+#md-docs h1, #md-docs > h2 { @apply font-bold}
 
-#md-docs > p { @apply text-base leading-relaxed mb-5; }
-#md-docs > li { @apply text-base mb-2; }
+#md-docs p { @apply text-base leading-relaxed mb-1; }
+#md-docs li { @apply text-base mb-2; }
 
 #md-docs a { @apply text-blue-500 hover:brightness-90 underline transition-all; }
 
@@ -28,7 +28,7 @@ blockquote ul li::before,
   @apply bg-zinc-600 w-[6px] h-[6px] rounded-full absolute left-0 top-[11px];
 }
 
-pre { @apply bg-zinc-900 p-2 }
+pre { @apply bg-zinc-900 lg:w-1/2 md:w-3/4 w-full p-2 }
 pre code { @apply bg-transparent font-mono }
 
 
@@ -46,6 +46,8 @@ pre code { @apply bg-transparent font-mono }
   @apply border-l-4 p-4 rounded-r-md lg:w-1/2 md:w-3/4 w-full my-4;
   white-space: pre-wrap;
 }
+
+#md-docs .not-title { @apply font-semibold text-lg }
 
 #md-docs > .tip { @apply border-[#3eaf7c] bg-[#95ffe833] }
 #md-docs > .warn { @apply border-[#e7c000] bg-[#ffe5644d] }

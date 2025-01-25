@@ -1,28 +1,14 @@
 import { Routes, Route, Link, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import DocNotFound from "../pages/DocNotFound";
-
-
-// Markdown it config
-import markdownit from 'markdown-it';
-import markdownItContainer from 'markdown-it-container'
-
-const md = markdownit({ breaks: true, xhtmlOut: false, html: true })
-  .use(markdownItContainer, "tip")
-  .use(markdownItContainer, "note")
-  .use(markdownItContainer, "error")
-  .use(markdownItContainer, "warn")
-  .use(markdownItContainer, "info");
-
+import md from "../ui/Markdown";
+import DocPagesNames from "../data/docPages";
 
 type DocPagesProps = {
   docPages: [name: string, content: string][];
 };
 
-const DocPagesNames: Record<string, string> = {
-  home: "Home",
-  quickstart: "Quick Start",
-};
+
 
 export default function DocPages({ docPages }: DocPagesProps) {
   const [menuOpen, setMenuOpen] = useState(false);
