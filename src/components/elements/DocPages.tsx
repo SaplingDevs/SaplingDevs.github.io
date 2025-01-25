@@ -21,6 +21,7 @@ export default function DocPages({ docPages }: DocPagesProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const [ hash, updateHash ] = useState(window.location.hash.split("/")[2]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -33,13 +34,15 @@ export default function DocPages({ docPages }: DocPagesProps) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const handlePage = () => updateHash(window.location.hash.split("/")[2]);
+
   return (
     <div className="flex">
       {/* Burger menu */}
-      <section>
+      <section className="z-10">
         <button
             ref={buttonRef}
-            className='absolute md:hidden text-white -ml-6'
+            className='absolute md:hidden text-white -ml-6 mt-2'
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <div className={`w-6 h-0.5 bg-white mb-1 transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
@@ -49,12 +52,13 @@ export default function DocPages({ docPages }: DocPagesProps) {
 
         {menuOpen && (
           <ul
-            className="absolute p-4 w-48 bg-[#18181b80] backdrop-blur-sm text-white rounded-lg z-50 mt-8 transition-all"
+            className="absolute p-4 w-48 bg-[#18181bEE] backdrop-blur-sm text-white rounded-lg z-50 mt-8 transition-all"
           >
             {docPages.map(([name]) => (
               <li 
                 key={name}
-                className="text-zinc-500 hover:text-zinc-200 transition-colors"
+                className={`${hash == name ? "text-zinc-200" : "text-zinc-500"} hover:text-zinc-200 transition-colors`}
+                onClick={() => handlePage()}
               >
                 <Link to={`/docs/${name}`} onClick={() => setMenuOpen(false)}>{DocPagesNames[name]}</Link>
               </li>
@@ -69,7 +73,8 @@ export default function DocPages({ docPages }: DocPagesProps) {
           {docPages.map(([name]) => (
             <li 
               key={name}
-              className="text-zinc-500 hover:text-zinc-200 transition-colors"
+              className={`${hash == name ? "text-zinc-200" : "text-zinc-500"} hover:text-zinc-200 transition-colors`}
+              onClick={() => handlePage()}
             >
               <Link to={`/docs/${name}`}>{DocPagesNames[name]}</Link>
             </li>

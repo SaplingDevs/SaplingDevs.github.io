@@ -20,8 +20,10 @@ export default function Docs() {
     : (<DocPages docPages={docPages} />)
 
   
-  if (window.location.hash == "#/docs/") window.location.hash = "#/docs/home";
-
+  if (!loading && ["#/docs/", "#/docs"].includes(window.location.hash)) {
+    window.location.hash = "#/docs/home";
+  }
+  
   return (
     <div className="animate-slide-up">
       <>

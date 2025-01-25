@@ -25,5 +25,5 @@ blockquote ul li::before {
 
 /* Markdown Docs not Found */
 #md-docs-error {
-  @apply absolute top-[40%] left-[40%]
+  @apply relative top-[120%]
 }
