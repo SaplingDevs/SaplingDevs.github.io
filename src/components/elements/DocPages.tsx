@@ -1,6 +1,7 @@
 import { Routes, Route, Link, useParams } from "react-router-dom";
 import markdownit from 'markdown-it';
 import { useEffect, useRef, useState } from "react";
+import DocNotFound from "../pages/DocNotFound";
 
 const md = markdownit({
   breaks: true,
@@ -12,8 +13,8 @@ type DocPagesProps = {
 };
 
 const DocPagesNames: Record<string, string> = {
+  home: "Home",
   quickstart: "Quick Start",
-  test: "Test page",
 };
 
 export default function DocPages({ docPages }: DocPagesProps) {
@@ -90,7 +91,11 @@ function DocContent({ pages }: { pages: any[] }) {
   const { docName } = useParams();
   const doc = pages.find(([name]) => name === docName);
 
-  if (!doc) return window.location.href = "404";
+  if (!doc) return (
+    <div id="md-docs-error" className="animate-slide-up">
+      <DocNotFound />
+    </div>
+  );
 
   return (
     <div

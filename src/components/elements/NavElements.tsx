@@ -35,7 +35,7 @@ export default function NavElements({ className, onItemClick }: NavElementsProps
         className="text-white hover:text-blue-500 cursor-pointer transition duration-300"
         onClick={handleClick}
       >
-        <Link to="/docs/">Docs</Link>
+        <Link to="/docs/home">Docs</Link>
       </li>
       
 

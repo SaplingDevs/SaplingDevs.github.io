@@ -1,3 +1,4 @@
+/* Markdown Docs */
 #md-docs > :first-child { @apply -mt-4; }
 #md-docs > h1, h2, h3, h4, h5 { @apply my-4; }
 #md-docs > hr { @apply w-full h-[2px] bg-slate-200 my-6; }
@@ -20,4 +21,9 @@ blockquote ul li { @apply relative pl-4;  }
 blockquote ul li::before {
   content: "";
   @apply bg-zinc-600 w-[6px] h-[6px] rounded-full absolute left-0 top-[11px];
+}
+
+/* Markdown Docs not Found */
+#md-docs-error {
+  @apply absolute top-[40%] left-[40%]
 }

@@ -23,6 +23,10 @@
       if (!window.location.hash) {
         window.location.href = window.location.origin + "#" + window.location.pathname;
       }
+
+      window.addEventListener('popstate', (event) => {
+        if (window.location.hash == "#/docs/") window.location.hash = "#/docs/home";
+      });
     </script>
     
     <title>SaplingDevs</title>

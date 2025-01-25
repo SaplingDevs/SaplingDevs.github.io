@@ -15,15 +15,18 @@ export default function Docs() {
     fetchDocFiles();
   }, []);
 
+  const DocElement = loading 
+    ? (<h2>Loading...</h2>) 
+    : (<DocPages docPages={docPages} />)
+
+  
+  if (window.location.hash == "#/docs/") window.location.hash = "#/docs/home";
+
   return (
     <div className="animate-slide-up">
-      {loading ? (
-        <h2>Loading...</h2>
-      ) : (
-        <>
-          <DocPages docPages={docPages} />
-        </>
-      )}
+      <>
+        {DocElement}
+      </>
     </div>
   );
 }
