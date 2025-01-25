@@ -25,13 +25,15 @@
       }
 
       window.addEventListener('popstate', (event) => {
-        if (window.location.hash == "#/docs/") window.location.hash = "#/docs/home";
+        if (["#/docs/", "#/docs"].includes(window.location.hash)) {
+          window.location.hash = "#/docs/home";
+        }
       });
     </script>
     
     <title>SaplingDevs</title>
-    <script type="module" crossorigin src="/assets/index-BnP9QTdG.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BkTyTku-.css">
+    <script type="module" crossorigin src="/assets/index-BR3a0a6q.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BxdFlnh6.css">
   </head>
   <body>
     <div id="root"></div>
