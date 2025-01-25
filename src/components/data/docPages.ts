@@ -4,4 +4,6 @@ const DocPagesNames: Record<string, string> = {
   changelog: "Changelog"
 };
 
-export default DocPagesNames;
+const DocPagesOrder = [ "home", "quickstart", "changelog" ]
+
+export { DocPagesNames, DocPagesOrder }

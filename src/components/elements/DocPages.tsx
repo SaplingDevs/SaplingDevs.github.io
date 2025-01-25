@@ -1,13 +1,12 @@
-import { Routes, Route, Link, useParams } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import DocNotFound from "../pages/DocNotFound";
 import md from "../ui/Markdown";
-import DocPagesNames from "../data/docPages";
+import { DocPagesNames, DocPagesOrder } from "../data/docPages";
 
 type DocPagesProps = {
   docPages: [name: string, content: string][];
 };
-
 
 
 export default function DocPages({ docPages }: DocPagesProps) {
@@ -28,6 +27,11 @@ export default function DocPages({ docPages }: DocPagesProps) {
   }, []);
 
   const handlePage = () => updateHash(window.location.hash.split("/")[2]);
+ 
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, name: string) => {
+    if (hash === name) return event.preventDefault();
+    setMenuOpen(false)
+  }
 
   return (
     <div className="flex">
@@ -47,13 +51,16 @@ export default function DocPages({ docPages }: DocPagesProps) {
           <ul
             className="absolute p-4 w-48 bg-[#18181bEE] backdrop-blur-sm text-white rounded-lg z-50 mt-8 transition-all"
           >
-            {docPages.map(([name]) => (
+            {DocPagesOrder.map((name) => (
               <li 
                 key={name}
                 className={`${hash == name ? "text-zinc-200" : "text-zinc-500"} hover:text-zinc-200 transition-colors`}
                 onClick={() => handlePage()}
               >
-                <Link to={`/docs/${name}`} onClick={() => setMenuOpen(false)}>{DocPagesNames[name]}</Link>
+                <a 
+                  href={`/docs/${name}/`}
+                  onClick={(event) => handleClick(event, name)}
+                >{DocPagesNames[name]}</a>
               </li>
             ))}
           </ul>
@@ -63,13 +70,16 @@ export default function DocPages({ docPages }: DocPagesProps) {
       {/* Sidebar */}
       <aside className="md:fixed md:flex absolute hidden p-4 w-48 bg-[#20202050] backdrop-blur-sm rounded-lg">
         <ul>
-          {docPages.map(([name]) => (
+          {DocPagesOrder.map((name) => (
             <li 
               key={name}
-              className={`${hash == name ? "text-zinc-200" : "text-zinc-500"} hover:text-zinc-200 transition-colors`}
+              className={`${hash == name ? "text-zinc-200 select-none" : "text-zinc-500"} hover:text-zinc-200 transition-colors`}
               onClick={() => handlePage()}
             >
-              <Link to={`/docs/${name}`}>{DocPagesNames[name]}</Link>
+              <a 
+                href={`/docs/${name}/`}
+                onClick={(event) => handleClick(event, name)}
+              >{DocPagesNames[name]}</a>
             </li>
           ))}
         </ul>

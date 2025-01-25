@@ -43,7 +43,7 @@ async function getDocFiles() {
     data.map(async ({ name, download_url }) => {
       const response = await fetch(download_url);
       const content = await response.text();
-      return [name.replace(".md", ""), content];
+      return [ name.toLowerCase().replace(".md", ""), content];
     })
   );
 }
