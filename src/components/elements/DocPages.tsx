@@ -86,7 +86,7 @@ export default function DocPages({ docPages }: DocPagesProps) {
       </aside>
 
       {/* Doc content */}
-      <main className="flex-1 md:ml-48 ml-0 p-4">
+      <main className="flex-1 md:ml-48 ml-0 p-4 select-text">
         <Routes>
           <Route path=":docName" element={<DocContent pages={docPages} />} />
         </Routes>
