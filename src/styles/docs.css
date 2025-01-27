@@ -5,17 +5,21 @@
 
 #md-docs h1 { @apply text-3xl; }
 #md-docs h2 { @apply text-2xl; }
-#md-docs h1, #md-docs > h2 { @apply font-bold}
+#md-docs h3 { @apply text-xl; }
+#md-docs h4 { @apply text-lg; }
+#md-docs h5 { @apply text-base font-bold; }
+
+#md-docs h1, #md-docs h2 { @apply font-bold}
 
 #md-docs p { @apply text-base leading-relaxed mb-1; }
 #md-docs li { @apply text-base mb-2; }
 
 #md-docs a { @apply text-blue-500 hover:brightness-90 underline transition-all; }
 
-code { @apply font-mono bg-zinc-900 p-1 rounded-md; }
+code { @apply font-mono bg-zinc-900 p-1 rounded-md whitespace-pre-wrap break-words; }
 
-blockquote { @apply py-2 border-l-4 border-zinc-700 pl-6; }
-blockquote ul { @apply list-none pl-0; }
+blockquote { @apply py-2 border-l-4 border-zinc-700 pl-6 md:max-w-full max-w-xs; }
+blockquote ul { @apply list-none pl-0 }
 
 blockquote ul li, 
 #md-docs ul li, 
