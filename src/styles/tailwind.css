@@ -134,3 +134,13 @@ h2 { font-size: larger; color: #7e7e82; }
   height: 3px;
   animation: slideBar .9s forwards;
 }
+
+
+@keyframes float {
+  0% { transform: translateY(0px); scale: 0.97; }
+  50% { transform: translateY(-2px); scale: 1; }
+  100% { transform: translateY(0px); scale: 0.97; }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
